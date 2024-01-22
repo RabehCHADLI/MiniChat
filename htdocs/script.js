@@ -29,7 +29,7 @@ form.addEventListener('submit', function (e) {
     }).then((data)=>{
         // 4. Je vide l'input
         document.querySelector('#message').value ='' 
-        document.querySelector('#pseudo').value ='' 
+
         getMessage()
         getUser()
     })
@@ -48,7 +48,7 @@ async function getMessage(){
     data.forEach(todo => {
 
         ul.innerHTML += `
-            <li class='bg-white text- p-2'><span class='fw-bold'> ${todo.pseudo} </span> : ${todo.message}</li>
+            <p class='bg-warning rounded-3 p-2 text-dark'><span class='fw-bold'> ${todo.pseudo} </span> : ${todo.message} <br> <span class='fw-lighter'>${todo.dateHour}</span></p>
          `
     });
 

@@ -6,7 +6,7 @@ $preparerequest->execute([
     $_POST['idInscription']
 ]);
 $user = $preparerequest->fetch();
-if ($user['pseudo'] == $_POST['idInscription'] || $user ) {
+if (!$user ) {
     
 if (!empty($_POST['idInscription']) && !empty($_POST['password'])) {
     $preparedRequest = $connexion->prepare('INSERT INTO `User`(`pseudo`, `password`) VALUES (?,?)');
@@ -17,10 +17,11 @@ if (!empty($_POST['idInscription']) && !empty($_POST['password'])) {
 
     header("Location: ./connexionChat");
 }
-
-
-}else{
+else{
     header("Location: ../sign.php");
+}
+
+
 }
 
 ?>

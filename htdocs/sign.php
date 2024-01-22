@@ -2,9 +2,9 @@
 
 include './partial/header.php';
 ?>  
-    <div class="container mt-5">
+    <div class="container mt-5 " >
         <div class="row" >
-            <form class="col-5 me-5 border border-end-2 p-5" action="../process/login.php" method="post">
+            <form class="col-5 me-5 border border-end-2 p-5 bg-light bg-gradient rounded-5" action="../process/login.php" method="post">
                 <h3 class="text-center">Inscription</h3>
                 <label class='m-2' for="idInscription">Identifiant</label>
                 <input class="form-control" type="text" placeholder="Identifiant/Pseudo d'inscription"name='idInscription'id='idInscription'>
@@ -14,7 +14,7 @@ include './partial/header.php';
                 <button class="btn btn-danger mt-3">S'inscrire</button>
             </form>
 
-            <form class="col-5 ms-5 border border-end-2 p-5" action="./process/connexionChat.php" method="post">
+            <form class="col-5 ms-5 border border-end-2 p-5 rounded-5 bg-light bg-gradient" action="./process/connexionChat.php" method="post">
                 <h3 class="text-center">Connexion</h3>
                 <label class="m-2" for="connextionID">Identifiant</label>
                 <input class='form-control' type="text" name='connexionID'id='connexionID'placeholder='Identifiant de connexion'>

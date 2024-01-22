@@ -4,7 +4,8 @@ $preparerequest = $connexion->prepare("SELECT * FROM `User` WHERE `pseudo` = " .
 $preparerequest->execute();
 $user = $preparerequest->fetch();
 date_default_timezone_set('Europe/Paris');
-if (!empty($user) && !empty($_POST['message']) && !empty($_POST['pseudo']) ) {
+
+if (!empty($user) || !empty($_POST['message']) && !empty($_POST['pseudo']) ) {
     $userId = $user['id'];
     $preparedRequest = $connexion->prepare(
         "INSERT INTO MessageUser ( idUser , ipUser , dateHour , `message`) VALUES (?,?,?,?)"
@@ -40,17 +41,6 @@ if (!empty($user) && !empty($_POST['message']) && !empty($_POST['pseudo']) ) {
         date('d-m-y h:i:s'),
         $_POST['message']
     ]);
-    if (!empty($_POST ['idConnexion']) && $_POST['password']) {
-        $preparedRequest = $connexion->prepare(
-            "INSERT INTO login (ipConnexion, idConnexion, password, idUserConnexion) VALUES (?, ?, ?, ?)"
-        );
-        $preparedRequest->execute([
-            $_POST['ipConnexion'],
-            $_POST['idConnexion'],
-            $_POST['password'],
-            $userID,
-        ]);
-    }
     unset($_COOKIE['PseudoCookie']);
     $valeurcookie = $_POST['pseudo'];
     setcookie("PseudoCookie", $valeurcookie, time()+3600 ,"/");

@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-.bg-chat{
-    background-color: rgba(125, 238, 125, 0.397);
-}
-.bg-header-footer{
-    background-color: rgb(240, 151, 252);
-}
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap');
 .user{
     height: 15rem;
 }
@@ -31,4 +26,23 @@ body {
 }
 a {
     list-style: none ;
+    text-decoration:none!important;
+}
+
+#bg-image {
+    background-image: url(./image/bgchat.png) !important;
+    background-position: top !important;
+    background-size: cover !important;
+    max-height: max-content;
+}
+#bg-header {
+    background-image: url(./image/21516481-avertir-securite-enregistrer-jaune-noir-bande-danger-ruban-pour-attention-danger-ruban-police-construction-zone-signe-banniere-barriere-symbole-vectoriel.jpg    ) !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    max-height: max-content;
+
+}
+.font-titre {
+    font-family: 'Rubik Burned', system-ui;
 }
